@@ -66,9 +66,9 @@
       name: mongodb-mongosh
       state: present
 
-  # - name: connnect to mongodb catalogue
-  #   ansible.builtin.command: mongosh mongodb.devopslab.fun --quiet --eval "db.getMongo().getDBNames().indexOf('catalogue')"
-  #   register: catalogue_output
+  - name: connnect to mongodb catalogue
+    ansible.builtin.command: mongosh mongodb.devopslab.fun --quiet --eval "db.getMongo().getDBNames().indexOf('catalogue')"
+    register: catalogue_output
 
   # # # - name: evaluate cataalogue database
   # # #   community.mongodb.mongodb_shell:
