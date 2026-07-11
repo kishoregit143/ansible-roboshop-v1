@@ -6,12 +6,18 @@
     sg_id: sg-09dd70d0e55355d39 # replace with your SG ID
     zone_id: "Z07848402FDVN47BEURKI" # replace with your ID
     domain_name: "devopslab.fun"
-    # we can pass instances through command line using -e
-    # instances: 
-    # - mongodb
-    # - redis
-    # - mysql
-    # - rabbitmq
+    #we can pass instances through command line using -e
+    instances: 
+    - mongodb
+    - redis
+    - mysql
+    - rabbitmq
+    - catalogue
+    - user
+    - cart
+    - frontend
+    - shipping
+    - payment
   tasks:
   - name: create ec2 instance
     amazon.aws.ec2_instance:
@@ -22,9 +28,9 @@
       tags:
         Name: "{{ item }}"
     loop: "{{ instances }}"
-    register: ec2_output
+    register: ec2_outputs
 
-# - name: print the ec2_output
+  # - name: print the ec2_output
   #   ansible.builtin.debug:
   #     msg: "{{ ec2_output }}"
 
