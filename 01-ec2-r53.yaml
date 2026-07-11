@@ -28,7 +28,7 @@
       tags:
         Name: "{{ item }}"
     loop: "{{ instances }}"
-    register: ec2_outputs
+    # register: ec2_outputs
 
   # - name: print the ec2_output
   #   ansible.builtin.debug:
